@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="4dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:text="购物车(0)"
+        android:textColor="#FFF"
+        android:padding="20dp"
+        android:textStyle="bold"
+        android:background="#FF2400"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ExpandableListView
+        android:id="@+id/list_cart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+    </ExpandableListView>
+
+    <RelativeLayout
+        android:background="#FF2400"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <CheckBox
+            android:textStyle="bold"
+            android:id="@+id/check_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textSize="18sp"
+            android:layout_marginLeft="10dp"
+            android:text="全选" />
+        <TextView
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:id="@+id/goods_sum_price"
+            android:layout_toRightOf="@+id/check_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFF"
+            android:text="价格："
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"/>
+
+        <Button
+            android:id="@+id/button"
+            android:textStyle="bold"
+            android:background="#FF7F00"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:text="结算(0)" />
+
+    </RelativeLayout>
+
+</android.widget.LinearLayout>
