@@ -1,8 +1,10 @@
 package zyh.com.yuekao_lianxi02;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ExpandableListView;
@@ -24,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements MyInterface,MyAda
     private TextView mSumPrice;
     private CheckBox mCheckAll;
     private MyAdapter myAdapter;
+    private Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +36,14 @@ public class MainActivity extends AppCompatActivity implements MyInterface,MyAda
         mGoodsList = findViewById(R.id.list_cart);
         mSumPrice = findViewById(R.id.goods_sum_price);
         mCheckAll = findViewById(R.id.check_all);
+        button = findViewById(R.id.button_tiaoguo);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,TwoActivity.class));
+            }
+        });
+
         //设置全选
         mCheckAll.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -75,4 +86,6 @@ public class MainActivity extends AppCompatActivity implements MyInterface,MyAda
         String s = String.valueOf(allprice);
         mSumPrice.setText(s);
     }
+
+
 }
